@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Love Maths</title>
 
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
     <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/817bb270b0.js" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Raleway%7CRighteous" rel="stylesheet">
 
     <!-- Style.Css -->
@@ -27,7 +26,29 @@
 
     <section>
         <div class="game-area">
-            
+            <div class="controls-area">
+                <button class="btn--big btn--green">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+                <button class="btn--big btn--blue">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
+                <button class="btn--big btn--yellow">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <button class="btn--big btn--red">
+                    <i class="fa-solid fa-divide"></i>
+                </button>
+            </div>
+            <div class="question-area">
+                <span id="operand1">0</span>
+                <span id="operator">X</span>
+                <span id="operand2">0</span>
+                <span>=</span>
+                <p class="answer-message">Enter Answer: </p>
+                <input type="number" id="answer-box">
+            </div>
+            <button class="btn btn--gray">Submit Answer</button>
 
         </div>
     </section>
