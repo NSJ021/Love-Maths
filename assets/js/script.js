@@ -33,11 +33,11 @@ function runGame(gameType) {
     if (gameType === "addition"){
         displayAddition(num1, num2);
     } else if (gameType === "subtract"){
-        displayAddition(num1, num2);
+        displaySubtract(num1, num2);
     } else if (gameType === "multiply"){
-        displayAddition(num1, num2);
+        displayMultiply(num1, num2);
     } else if (gameType === "division"){
-        displayAddition(num1, num2);
+        displayDivide(num1, num2);
     } else {
         alert(`Unknown game type: ${gameType}`);
         throw `Unknown game type: ${gameType}. Aborting!`;
