@@ -39,8 +39,8 @@ function runGame(gameType) {
     document.getElementById("answer-box").focus();
 
     // Random numbers used to create questions
-    let num1 = Math.floor(Math.random() * 100) + 1;
-    let num2 = Math.floor(Math.random() * 100) + 1;
+    let num1 = Math.floor(Math.random() * 20) + 1;
+    let num2 = Math.floor(Math.random() * 20) + 1;
 
     if (gameType === "addition"){
         displayAddition(num1, num2);
