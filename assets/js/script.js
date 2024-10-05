@@ -18,6 +18,12 @@ document.addEventListener("DOMContentLoaded", function(){
             }
         })
     }
+    // Allows user to press the enter key to submit an answer
+    document.getElementById("answer-box").addEventListener("keydown", function(event){
+        if (event.key === "Enter"){
+            checkAnswer();
+        }
+    })
     runGame("addition");
 })
 
@@ -27,6 +33,11 @@ document.addEventListener("DOMContentLoaded", function(){
  * @param {*} gameType 
  */
 function runGame(gameType) {
+
+    // Clears the answer box after every submit, also calls focus method or put the mouse inside answer box ready for next answer
+    document.getElementById("answer-box").value ="";
+    document.getElementById("answer-box").focus();
+
     // Random numbers used to create questions
     let num1 = Math.floor(Math.random() * 100) + 1;
     let num2 = Math.floor(Math.random() * 100) + 1;
