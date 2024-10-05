@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function(){
 /**
  * Main Game Loop, called when initially loaded
  * and after an answer is processed
+ * @param {*} gameType 
  */
 function runGame(gameType) {
     // Random numbers used to create questions
@@ -109,27 +110,51 @@ function incrementWrongAnswer() {
     document.getElementById("incorrect").innerText = ++oldScore;
 }
 
+/**
+ * Display addition question, gets both operands and operator for + gameType
+ * @param {*} operand1 
+ * @param {*} operand2 
+ */
+
 function displayAddition(operand1, operand2) {
     document.getElementById("operand1").textContent = operand1;
     document.getElementById("operand2").textContent = operand2;
     document.getElementById("operator").textContent = "+";
-
 }
 
+/**
+ * Display subtract question, gets both operands and operator for - gameType
+ * @param {*} operand1 
+ * @param {*} operand2 
+ */
 function displaySubtract(operand1, operand2) {
-    document.getElementById("operand1").textContent = operand1;
-    document.getElementById("operand2").textContent = operand2;
+    //  if op1 is bigger return that, if op2 is bigger return that, all to prevent a negative answer to subtraction questions
+    // condition ? true : false
+    document.getElementById("operand1").textContent = operand1 > operand2 ? operand1 : operand2
+    document.getElementById("operand2").textContent = operand1 > operand2 ? operand2 : operand1
     document.getElementById("operator").textContent = "-";
 }
 
+/**
+ * Display multiply question, gets both operands and operator for * gameType
+ * @param {*} operand1 
+ * @param {*} operand2 
+ */
 function displayMultiply(operand1, operand2) {
     document.getElementById("operand1").textContent = operand1;
     document.getElementById("operand2").textContent = operand2;
     document.getElementById("operator").textContent = "X";
 }
 
+/**
+ * Display division question, gets both operands and operator for / gameType
+ * @param {*} operand1 
+ * @param {*} operand2 
+ */
 function displayDivide(operand1, operand2) {
-    document.getElementById("operand1").textContent = operand1;
-    document.getElementById("operand2").textContent = operand2;
+    //  if op1 is bigger return that, if op2 is bigger return that, all to prevent a negative answer to subtraction questions
+    // condition ? true : false
+    document.getElementById("operand1").textContent = operand1 > operand2 ? operand1 : operand2
+    document.getElementById("operand2").textContent = operand1 > operand2 ? operand2 : operand1
     document.getElementById("operator").textContent = "/";
 }
