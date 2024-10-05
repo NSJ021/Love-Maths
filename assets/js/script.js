@@ -14,21 +14,34 @@ document.addEventListener("DOMContentLoaded", function(){
                 alert("You Clicked Submit");
             } else {
                 let gameType = this.getAttribute("data-type");
-                alert(`You Clicked ${gameType}`);
+                runGame(gameType);
             }
         })
     }
-
+    runGame("addition");
 })
 
 /**
  * Main Game Loop, called when initially loaded
  * and after an answer is processed
  */
-function runGame() {
+function runGame(gameType) {
     // Random numbers used to create questions
     let num1 = Math.floor(Math.random() * 100) + 1;
     let num2 = Math.floor(Math.random() * 100) + 1;
+
+    if (gameType === "addition"){
+        displayAddition(num1, num2);
+    } else if (gameType === "subtract"){
+        displayAddition(num1, num2);
+    } else if (gameType === "multiply"){
+        displayAddition(num1, num2);
+    } else if (gameType === "division"){
+        displayAddition(num1, num2);
+    } else {
+        alert(`Unknown game type: ${gameType}`);
+        throw `Unknown game type: ${gameType}. Aborting!`;
+    }
 }
 
 function checkAnswer() {
@@ -47,18 +60,27 @@ function incrementWrongAnswer() {
     
 }
 
-function displayAddition() {
-    
+function displayAddition(operand1, operand2) {
+    document.getElementById("operand1").textContent = operand1;
+    document.getElementById("operand2").textContent = operand2;
+    document.getElementById("operator").textContent = "+";
+
 }
 
-function displaySubtract() {
-    
+function displaySubtract(operand1, operand2) {
+    document.getElementById("operand1").textContent = operand1;
+    document.getElementById("operand2").textContent = operand2;
+    document.getElementById("operator").textContent = "-";
 }
 
-function displayMultiply() {
-    
+function displayMultiply(operand1, operand2) {
+    document.getElementById("operand1").textContent = operand1;
+    document.getElementById("operand2").textContent = operand2;
+    document.getElementById("operator").textContent = "X";
 }
 
-function displayDivide() {
-    
+function displayDivide(operand1, operand2) {
+    document.getElementById("operand1").textContent = operand1;
+    document.getElementById("operand2").textContent = operand2;
+    document.getElementById("operator").textContent = "/";
 }
